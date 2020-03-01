@@ -1,0 +1,7 @@
+.vscode
+env
+__pycache__/
+*/__pycache__/
+exp.py
+tutors_app/data/booking.json
+tutors_app/data/request.json
