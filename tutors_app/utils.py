@@ -22,7 +22,7 @@ def get_tutors_by_goal(path, goal):
 def get_hour_and_day():
     weekdays = dict(zip(range(1, 8), ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]))
     now_hour = datetime.datetime.now().hour
-    now_day = --datetime.datetime.now().weekday()
+    now_day = datetime.datetime.now().weekday()
     if now_hour % 2:
         now_hour += 1
 
