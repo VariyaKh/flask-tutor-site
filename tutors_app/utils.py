@@ -29,7 +29,7 @@ def get_hour_and_day():
     if now_hour == 24:
         now_hour = 0
         now_day += 1
-        now_day = now_day % 7 + 1
+        now_day = now_day % 7
 
     if now_hour < 8:
         now_hour = 0
@@ -38,9 +38,10 @@ def get_hour_and_day():
 
 
 def get_free_tutors(path):
-    tutors = get_data_json(path)
     now_hour, now_day = get_hour_and_day()
-
+    if now_hour == "0:00":
+        return []
+    tutors = get_data_json(path)
     return [tutor for tutor in tutors if tutor["free"][now_day][now_hour]]
 
 
