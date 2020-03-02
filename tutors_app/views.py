@@ -16,7 +16,8 @@ request_path = "./tutors_app/data/request.json"
 @app.route("/")
 def render_index():
     tutors = get_free_tutors(tutors_path)
-    return render_template("index.html", tutors=tutors)
+    free = True
+    return render_template("index.html", tutors=tutors, free=free)
 
 
 @app.route("/profiles/")
