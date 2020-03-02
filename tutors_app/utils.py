@@ -22,7 +22,7 @@ def get_tutors_by_goal(path, goal):
 def get_hour_and_day():
     weekdays = dict(zip(range(1, 8), ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]))
     now_hour = datetime.datetime.now().hour
-    now_day = datetime.datetime.now().weekday()
+    now_day = --datetime.datetime.now().weekday()
     if now_hour % 2:
         now_hour += 1
 
@@ -33,13 +33,14 @@ def get_hour_and_day():
 
     if now_hour < 8:
         now_hour = 8
-    return f"{now_hour}:00", weekdays[now_day]
+
+    return f"{now_hour}:00", weekdays[now_day + 1]
 
 
 def get_free_tutors(path):
     tutors = get_data_json(path)
     now_hour, now_day = get_hour_and_day()
-    print(now_hour, now_day)
+
     return [tutor for tutor in tutors if tutor["free"][now_day][now_hour]]
 
 
