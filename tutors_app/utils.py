@@ -32,7 +32,7 @@ def get_hour_and_day():
         now_day = now_day % 7 + 1
 
     if now_hour < 8:
-        now_hour = 8
+        now_hour = 0
 
     return f"{now_hour}:00", weekdays[now_day + 1]
 

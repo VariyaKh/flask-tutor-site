@@ -12,7 +12,9 @@
         <a href="/goals/relocate/" class="btn btn-outline-secondary">🚜 Для переезда</a>
       </div>
     </div>
-    
+    {% if free %}
+      <h2 class="h5 text-center mb-5">Свободны прямо сейчас</h2>
+    {% endif %}
     {% if tutors %}
     <div class="row">
       <div class="col-12 col-lg-10 offset-lg-1 m-auto">
@@ -34,7 +36,6 @@
       </div>
     </div>
     {% else %}
-    <h2 class="h5 text-center mb-5">Свободны прямо сейчас</h2>
     <h3 class="h5 text-center mb-3">Сейчас нет свободных репетиторов 😢</h3>
     <div class="text-center pb-2">
       <a href="/profiles/" class="btn btn-primary">Показать всех</a>
